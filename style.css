@@ -184,8 +184,24 @@ h6 {
 
 .Dropdown {
     position: relative;
+    transition: border-color 0.8s,left 0.8s,top 0.8s;
 }
-
+.Dropdown::after {
+    content: "";
+    /* border: 8px solid red; */
+    border-color: transparent #333 transparent transparent;
+    position: absolute;
+    transition: all 0.3s linear;
+}
+.Dropdown:hover:after {
+    position: absolute;
+    
+    left: 100%;
+    top: 42%;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #3498db transparent transparent transparent;
+}
 .Dropdown-menu {
     background-color: #0051a8;
     width: 150px;
@@ -766,6 +782,7 @@ h6 {
     background-color: #f8f8f8;
     position: relative;
 }
+
 
 .blog-item {
     width: 30%;
